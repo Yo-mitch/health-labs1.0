@@ -40,7 +40,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     });
     const completion = await openai.chat.completions.create ({
         messages: [{role: "system", content: SystemPrompt }, ...messages],
-        model: "google/gemini-2.0-flash-001",
+        model: "gpt-3.5-turbo",
         stream: true,
     });
 
