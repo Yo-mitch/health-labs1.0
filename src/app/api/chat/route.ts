@@ -34,14 +34,14 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         organization: "Headstarter GH",
         project: "health-lab1.0",
         defaultHeaders: {
-            "HTTP-Referer": "https://localhost:3000",
+            "HTTP-Referer": "https://health-labs-three.vercel.app/",
             "X-Title": "Headstarter Gh",
         },
     });
     const completion = await openai.chat.completions.create ({
         messages: [{role: "system", content: SystemPrompt }, ...messages],
-        model: "google/gemini-2.0-flash-001",
-        stream: true,
+        model: "gpt-3.5-turbo",
+        stream: false,
     });
 
     let accumulatedResponse = " " ;
